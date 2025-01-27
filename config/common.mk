@@ -1,5 +1,5 @@
 # Allow vendor/extra to override any property by setting it first
-$(call inherit-product-if-exists, vendor/extra/product.mk)
+$(call inherit-product, vendor/extra/product.mk)
 
 # Google Apps
 $(call inherit-product, vendor/gms/products/gms.mk)
@@ -8,7 +8,10 @@ $(call inherit-product, vendor/gms/products/gms.mk)
 $(call inherit-product-if-exists, vendor/pixel-framework/config.mk)
 
 # PixelLauncher overlays
-$(call inherit-product-if-exists, vendor/google/overlays/ThemeIcons/config.mk)
+$(call inherit-product, vendor/overlays/ThemeIcons/config.mk)
+
+# Translations
+$(call inherit-product, vendor/overlays/translations/config.mk)
 
 PRODUCT_BRAND ?= PixelOS
 
